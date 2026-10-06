@@ -1,0 +1,17 @@
+<section class="campaigns public-home-section" id="campanas" aria-labelledby="campaigns-title">
+  <header class="public-section-heading">
+    <p>{{ content.kicker }}</p><h2 id="campaigns-title">{{ content.title }}</h2><span>{{ content.description }}</span>
+  </header>
+  <div class="campaign-grid">
+    @for (campaign of content.items; track campaign.title) {
+      <article class="campaign-card">
+        <div class="campaign-card__image"><img [src]="campaign.imageUrl" [alt]="campaign.imageAlt" loading="lazy"></div>
+        <div class="campaign-card__body">
+          <h3>{{ campaign.title }}</h3><p>{{ campaign.description }}</p>
+          <dl><div><dt class="material-symbols-outlined" aria-label="Fecha">calendar_month</dt><dd>{{ campaign.date }}</dd></div><div><dt class="material-symbols-outlined" aria-label="Ubicación">location_on</dt><dd>{{ campaign.location }}</dd></div></dl>
+          <span class="public-pending-status">{{ pendingLabel }}</span>
+        </div>
+      </article>
+    }
+  </div>
+</section>

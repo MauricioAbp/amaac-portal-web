@@ -1,0 +1,13 @@
+<section class="participation" id="participar" aria-labelledby="participation-title">
+  <div class="participation__inner">
+    <header class="public-section-heading"><p>{{ content.kicker }}</p><h2 id="participation-title">{{ content.title }}</h2><span>{{ content.description }}</span></header>
+    <div class="participation-grid">
+      @for (option of content.items; track option.title) {
+        <article class="participation-card">
+          <span class="participation-card__icon material-symbols-outlined" aria-hidden="true">{{ option.icon }}</span><h3>{{ option.title }}</h3><p>{{ option.description }}</p>
+          <span class="public-pending-status">{{ pendingLabel }}</span>
+        </article>
+      }
+    </div>
+  </div>
+</section>

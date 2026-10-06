@@ -1,0 +1,6 @@
+@Amaac.Api_HostAddress = http://localhost:5020
+
+GET {{Amaac.Api_HostAddress}}/health
+Accept: application/json
+
+###

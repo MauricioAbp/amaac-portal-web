@@ -1,0 +1,33 @@
+<header class="public-header" (keydown.escape)="closeMenu(true)">
+  <div class="public-header__inner">
+    <a class="brand" routerLink="/" [attr.aria-label]="content.brand.accessibleName" (click)="closeMenu()">
+      <span class="brand__mark material-symbols-outlined" aria-hidden="true">diversity_1</span>
+      <span><strong>{{ content.brand.name }}</strong><small>{{ content.brand.country }}</small></span>
+    </a>
+
+    <nav class="desktop-navigation" aria-label="Navegación pública">
+      @for (item of navigation; track item.label) {
+        <a routerLink="/" [fragment]="item.fragment" [attr.aria-current]="item.label === 'Inicio' ? 'page' : null">{{ item.label }}</a>
+      }
+    </nav>
+
+    <div class="desktop-actions">
+      <a class="button button--outline" routerLink="/" fragment="donaciones">{{ content.header.donationsLabel }}</a>
+      <a class="button button--accent" routerLink="/" fragment="participar">{{ content.header.participationLabel }}</a>
+      <span class="availability-status"><span class="material-symbols-outlined" aria-hidden="true">schedule</span>{{ content.header.accessLabel }}: {{ content.pendingLabel }}</span>
+    </div>
+
+    <button #menuToggle class="menu-toggle" type="button" [attr.aria-expanded]="isMenuOpen()" aria-controls="mobile-navigation" [attr.aria-label]="isMenuOpen() ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'" (click)="toggleMenu()">
+      <span class="material-symbols-outlined" aria-hidden="true">{{ isMenuOpen() ? 'close' : 'menu' }}</span>
+    </button>
+  </div>
+
+  <nav id="mobile-navigation" class="mobile-navigation" [class.mobile-navigation--open]="isMenuOpen()" aria-label="Navegación móvil">
+    @for (item of navigation; track item.label) {
+      <a routerLink="/" [fragment]="item.fragment" [attr.aria-current]="item.label === 'Inicio' ? 'page' : null" (click)="closeMenu()">{{ item.label }}</a>
+    }
+    <a class="button button--outline" routerLink="/" fragment="donaciones" (click)="closeMenu()">{{ content.header.donationsLabel }}</a>
+    <a class="button button--accent" routerLink="/" fragment="participar" (click)="closeMenu()">{{ content.header.participationLabel }}</a>
+    <span class="availability-status"><span class="material-symbols-outlined" aria-hidden="true">schedule</span>{{ content.header.accessLabel }}: {{ content.pendingLabel }}</span>
+  </nav>
+</header>

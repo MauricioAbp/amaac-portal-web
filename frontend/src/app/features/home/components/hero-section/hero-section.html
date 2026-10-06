@@ -1,0 +1,13 @@
+<section class="hero" aria-labelledby="hero-title">
+  <img class="hero__image" [src]="content.imageUrl" [alt]="content.imageAlt" fetchpriority="high">
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">{{ content.eyebrow }}</p>
+    <h1 id="hero-title">{{ content.title }}</h1>
+    <p>{{ content.description }}</p>
+    <div class="hero__actions">
+      <a class="hero__button hero__button--accent" routerLink="/" fragment="participar">{{ content.participationLabel }}</a>
+      <a class="hero__button hero__button--light" routerLink="/" fragment="nosotros">{{ content.aboutLabel }}</a>
+    </div>
+  </div>
+</section>

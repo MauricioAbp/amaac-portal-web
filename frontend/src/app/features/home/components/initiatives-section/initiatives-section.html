@@ -1,0 +1,14 @@
+<section class="initiatives" id="iniciativas" aria-labelledby="initiatives-title">
+  <div class="initiatives__inner">
+    <header class="public-section-heading"><p>{{ content.kicker }}</p><h2 id="initiatives-title">{{ content.title }}</h2><span>{{ content.description }}</span></header>
+    <div class="initiative-grid">
+      @for (initiative of content.items; track initiative.title) {
+        <article class="initiative-card">
+          <div class="initiative-card__top"><span class="initiative-card__icon material-symbols-outlined" aria-hidden="true">{{ initiative.icon }}</span><span class="initiative-card__category">{{ initiative.category }}</span></div>
+          <h3>{{ initiative.title }}</h3><p>{{ initiative.description }}</p>
+          <span class="public-pending-status">{{ pendingLabel }}</span>
+        </article>
+      }
+    </div>
+  </div>
+</section>

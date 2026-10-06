@@ -1,0 +1,9 @@
+.participation { scroll-margin-top: 4.75rem; padding: clamp(4.5rem, 8vw, 6rem) 0; background: #f7f9f8; border-top: 1px solid #edf0ee; }
+.participation__inner { width: min(100% - 2rem, 62rem); margin: 0 auto; }
+.participation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.participation-card { display: flex; min-height: 20rem; flex-direction: column; align-items: center; padding: 2rem; background: #fff; border: 1px solid #e3e8e5; border-radius: 1.15rem; box-shadow: 0 7px 22px rgb(15 42 31 / 5%); text-align: center; }
+.participation-card__icon { display: grid; width: 3.25rem; height: 3.25rem; place-items: center; color: var(--brand-green); background: #eef7f2; border-radius: .85rem; font-size: 1.55rem; }
+.participation-card h3 { margin: 1.2rem 0 0; color: #17201c; font-size: 1.45rem; }
+.participation-card p { margin: .8rem 0 1.5rem; color: #5f6a78; font-size: 1rem; line-height: 1.65; }
+.participation-card .public-pending-status { width: 100%; }
+@media (max-width: 639px) { .participation-grid { grid-template-columns: 1fr; } }

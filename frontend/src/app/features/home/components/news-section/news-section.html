@@ -1,0 +1,11 @@
+<section class="news public-home-section" id="noticias" aria-labelledby="news-title">
+  <header class="public-section-heading"><p>{{ content.kicker }}</p><h2 id="news-title">{{ content.title }}</h2><span>{{ content.description }}</span></header>
+  <div class="news-grid">
+    @for (item of content.items; track item.title) {
+      <article class="news-card">
+        <time>{{ item.date }}</time><h3>{{ item.title }}</h3><p>{{ item.summary }}</p>
+        <span class="public-pending-status">{{ pendingLabel }}</span>
+      </article>
+    }
+  </div>
+</section>

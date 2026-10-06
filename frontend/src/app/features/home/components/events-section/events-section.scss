@@ -1,0 +1,10 @@
+.events { scroll-margin-top: 4.75rem; padding: clamp(4.5rem, 8vw, 6rem) 0; background: #f7f9f8; border-block: 1px solid #edf0ee; }
+.events__inner { width: min(100% - 2rem, 68rem); margin: 0 auto; }
+.event-list { display: grid; gap: 1rem; }
+.event-card { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; padding: 1.5rem; background: #fff; border: 1px solid #e3e8e5; border-radius: 1rem; box-shadow: 0 5px 15px rgb(15 42 31 / 4%); }
+.event-card h3 { margin: 0; color: #17201c; font-size: 1.3rem; line-height: 1.4; }
+.event-card p { margin: .5rem 0 .8rem; color: #5f6a78; font-size: 1rem; line-height: 1.55; }
+ul { display: flex; flex-wrap: wrap; gap: .55rem 1rem; margin: 0; padding: 0; list-style: none; }
+li { display: inline-flex; align-items: center; gap: .35rem; color: #687383; font-size: 1rem; }
+li span { font-size: 1.1rem; }
+@media (max-width: 800px) { .event-card { grid-template-columns: 1fr; } }

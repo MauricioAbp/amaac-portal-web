@@ -1,0 +1,49 @@
+:host { display: block; min-height: 100dvh; }
+.app-frame { min-height: 100dvh; background: var(--surface); }
+.sidebar { position: fixed; inset: 0 auto 0 0; z-index: 30; display: flex; width: 18rem; flex-direction: column; color: #fff; background: var(--brand-dark); border-right: 1px solid rgb(255 255 255 / 8%); transition: transform 220ms ease; }
+.brand { display: flex; min-height: 4.75rem; align-items: center; gap: .75rem; padding: 0 1.25rem; border-bottom: 1px solid rgb(255 255 255 / 10%); }
+.brand__mark { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; border-radius: .75rem; color: #fff; background: var(--brand-mid); }
+.brand strong, .brand small { display: block; }
+.brand strong { font-size: 1rem; }
+.brand small { margin-top: .15rem; color: rgb(255 255 255 / 58%); font-size: .75rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+.sidebar__close { display: none; margin-left: auto; color: #fff; background: none; border: 0; font-size: 1.75rem; }
+.navigation { flex: 1; padding: 1.25rem 1rem; overflow-y: auto; }
+.navigation__group { margin-bottom: 1.5rem; }
+.navigation__group h2 { margin: 0 0 .5rem .75rem; color: rgb(255 255 255 / 45%); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.navigation__item { display: flex; min-height: 2.75rem; align-items: center; gap: .75rem; padding: .55rem .75rem; color: rgb(255 255 255 / 76%); border-radius: .65rem; text-decoration: none; }
+.navigation__item--disabled { cursor: default; }
+.navigation__item--active { color: #fff; background: var(--brand-mid); box-shadow: 0 6px 18px rgb(0 0 0 / 12%); }
+.navigation__icon { display: grid; width: 1.5rem; height: 1.5rem; place-items: center; font-size: 1.25rem; }
+.navigation__badge { margin-left: auto; padding: .15rem .5rem; color: #ffb48e; background: rgb(234 88 12 / 18%); border: 1px solid rgb(234 88 12 / 32%); border-radius: 999px; font-size: .75rem; }
+.sidebar__footer { padding: 1rem; border-top: 1px solid rgb(255 255 255 / 10%); }
+.sidebar__identity { display: flex; align-items: center; gap: .7rem; padding: .5rem; }
+.sidebar__identity strong, .sidebar__identity small { display: block; }
+.sidebar__identity strong { font-size: .85rem; }
+.sidebar__identity small { margin-top: .15rem; color: rgb(255 255 255 / 55%); font-size: .75rem; }
+.sidebar__footer button { width: 100%; margin-top: .5rem; padding: .75rem; color: rgb(255 255 255 / 55%); background: transparent; border: 0; text-align: left; }
+.workspace { min-height: 100dvh; margin-left: 18rem; }
+.topbar { position: sticky; top: 0; z-index: 20; display: flex; height: 5rem; align-items: center; justify-content: space-between; padding: 0 clamp(1.25rem, 4vw, 3rem); background: rgb(255 255 255 / 92%); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
+.breadcrumb { display: flex; align-items: center; gap: .85rem; font-size: 1rem; }
+.breadcrumb span { color: var(--text-muted); }
+.breadcrumb b { color: #a5acb8; font-size: 1.35rem; }
+.topbar__actions { display: flex; align-items: center; gap: 1rem; }
+.topbar__actions button { width: 2.5rem; height: 2.5rem; color: #697284; background: transparent; border: 0; border-radius: 50%; font-weight: 700; }
+.avatar { display: grid; flex: 0 0 auto; place-items: center; color: #fff; background: #154634; border-radius: 50%; font-weight: 700; }
+.avatar--small { width: 2.75rem; height: 2.75rem; font-size: .9rem; border: 3px solid #dfe9e4; }
+.content { width: min(100%, 76rem); margin: 0 auto; padding: 2.5rem clamp(1.25rem, 4vw, 3rem) 4rem; }
+.menu-button { display: none; color: var(--brand-dark); background: transparent; border: 0; font-size: 1.5rem; }
+.navigation-backdrop { display: none; }
+@media (max-width: 1023px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar--open { transform: translateX(0); }
+  .sidebar__close, .menu-button { display: block; }
+  .workspace { margin-left: 0; }
+  .navigation-backdrop { position: fixed; inset: 0; z-index: 25; display: block; visibility: hidden; opacity: 0; background: rgb(0 0 0 / 55%); border: 0; transition: opacity 220ms ease, visibility 220ms ease; }
+  .navigation-backdrop--visible { visibility: visible; opacity: 1; }
+}
+@media (max-width: 639px) {
+  .topbar { height: 4.25rem; padding: 0 1rem; }
+  .breadcrumb span, .breadcrumb b, .topbar__actions button { display: none; }
+  .breadcrumb strong { font-size: .9rem; }
+  .content { padding: 1.75rem 1rem 3rem; }
+}

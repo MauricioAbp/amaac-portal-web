@@ -1,0 +1,6 @@
+.news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.news-card { display: flex; min-height: 20rem; flex-direction: column; padding: 1.65rem; background: #fff; border: 1px solid #e3e8e5; border-radius: 1.15rem; }
+.news-card time { color: var(--accent); font-size: 1rem; font-weight: 700; }
+.news-card h3 { margin: 1.1rem 0 0; color: #17201c; font-size: 1.35rem; line-height: 1.4; }
+.news-card p { margin: .9rem 0 1.5rem; color: #5f6a78; font-size: 1rem; line-height: 1.65; }
+@media (max-width: 900px) { .news-grid { grid-template-columns: 1fr; } .news-card { min-height: auto; } }

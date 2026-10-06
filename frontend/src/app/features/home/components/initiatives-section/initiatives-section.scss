@@ -1,0 +1,10 @@
+.initiatives { scroll-margin-top: 4.75rem; padding: clamp(4.5rem, 8vw, 6rem) 0; background: #f7f9f8; border-block: 1px solid #edf0ee; }
+.initiatives__inner { width: min(100% - 2rem, 76rem); margin: 0 auto; }
+.initiative-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.initiative-card { display: flex; min-height: 19rem; flex-direction: column; padding: 1.65rem; background: #fff; border: 1px solid #e3e8e5; border-radius: 1.15rem; box-shadow: 0 6px 18px rgb(15 42 31 / 4%); }
+.initiative-card__top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.initiative-card__icon { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; color: var(--brand-mid); background: #eef7f2; border-radius: .75rem; font-size: 1.4rem; }
+.initiative-card__category { padding: .35rem .7rem; color: #5d6874; background: #f6f7f7; border: 1px solid #e3e7e5; border-radius: 999px; font-size: 1rem; }
+.initiative-card h3 { margin: 1.5rem 0 0; color: #17201c; font-size: 1.35rem; line-height: 1.35; }
+.initiative-card p { margin: .8rem 0 1.25rem; color: #5f6a78; font-size: 1rem; line-height: 1.65; }
+@media (max-width: 900px) { .initiative-grid { grid-template-columns: 1fr; } .initiative-card { min-height: auto; } }

@@ -1,0 +1,13 @@
+<section class="events" id="eventos" aria-labelledby="events-title">
+  <div class="events__inner">
+    <header class="public-section-heading"><p>{{ content.kicker }}</p><h2 id="events-title">{{ content.title }}</h2><span>{{ content.description }}</span></header>
+    <div class="event-list">
+      @for (event of content.items; track event.title) {
+        <article class="event-card">
+          <div class="event-card__content"><h3>{{ event.title }}</h3><p>{{ event.description }}</p><ul><li><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>{{ event.date }}</li><li><span class="material-symbols-outlined" aria-hidden="true">schedule</span>{{ event.time }}</li><li><span class="material-symbols-outlined" aria-hidden="true">location_on</span>{{ event.location }}</li></ul></div>
+          <span class="public-pending-status">{{ pendingLabel }}</span>
+        </article>
+      }
+    </div>
+  </div>
+</section>
